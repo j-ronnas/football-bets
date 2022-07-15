@@ -43,6 +43,9 @@ $(function(){
         let s = "";
         for(r of response.response){
             matchResult = "X";
+            if(r.fixture.status.short != "FT"){
+                continue;
+            }
             if(r.teams.home.winner){
                 matchResult = "1";
             }else if(r.teams.away.winner){
@@ -51,6 +54,7 @@ $(function(){
             resultList.push(matchResult);
             s += "<p>" + matchResult + "</p>";
         }
+        console.log(resultList);
         //$("#results").html(s);
     });
 
