@@ -16,7 +16,7 @@ $(function(){
 
 
 
-    var scoreboard = {};
+    var scoreboard = [];
     var resultList = [];
     var today = new Date();
     var endDate = (today.toISOString().substring(0,10));
@@ -56,6 +56,37 @@ $(function(){
         }
         console.log(resultList);
         //$("#results").html(s);
+        for(d of data){
+            let userName = d["Namn:"];
+            //console.log(userName);
+            //console.log(d)
+            index = 0;
+            score = 0;
+            for(key in d){
+                //console.log(key);
+                if(key.substring(0, 5) == "Match"){
+                    if(index < resultList.length){
+                        if(resultList[index] == d[key]){
+                            score ++;
+                        }
+                    }
+                    index++;
+                }
+            }
+            //console.log(score);
+            scoreboard.push([userName, score]);
+        }
+        
+        scoreboard.sort((a,b)=>b[1]-a[1]);
+        console.log(scoreboard);
+        standingsHTML = "";
+
+        for(score of scoreboard){
+            standingsHTML += "<p>" + score[0] + ": " + score[1] + "</p>"; 
+        }
+
+        $("#standings").html(standingsHTML);
+        
     });
 
 
@@ -96,6 +127,8 @@ $(function(){
         $("#betlist").html(s);
 
     });
+
+    
    
 
 }); 
