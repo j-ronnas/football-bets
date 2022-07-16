@@ -43,17 +43,21 @@ $(function(){
         let s = "";
         for(r of response.response){
             matchResult = "X";
-            if(r.fixture.status.short != "FT"){
-                continue;
-            }
+            
             if(r.teams.home.winner){
                 matchResult = "1";
             }else if(r.teams.away.winner){
                 matchResult = "2";
             }
-            resultList.push(matchResult);
-            s += "<p>" + matchResult + "</p>";
+            if(r.fixture.status.short == "FT"){
+                resultList.push(matchResult);
+            }
+            
+            //s += "<p>" + matchResult + "</p>";
         }
+        let temp = resultList[16];
+        resultList[16] = resultList[17];
+        resultList[17] = temp;
         console.log(resultList);
         //$("#results").html(s);
         for(d of data){
