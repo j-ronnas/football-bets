@@ -3,9 +3,9 @@ function swap(list, a, b){
     if(b>=list.length ){
         return;
     }
-    let temp = list[16];
-    list[16] = list[17];
-    list[17] = temp;
+    let temp = list[a];
+    list[a] = list[b];
+    list[b] = temp;
 }
 
 $(function(){
