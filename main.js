@@ -11,7 +11,10 @@ function swap(list, a, b){
 $(function(){
     //USER BET DATA
     //var csv = "Timestamp,Namn:,Match 1: Österrike- Nordirland,Match 2: England - Norge,Match 3: Danmark - Finland,Match 4: Tyskland - Spanien,Match 5: Sverige - Schweiz,Match 6: Nederländerna - Portugal,Match 7: Italien - Island,Match 8: Frankrike - Belgien,Match 9: Nordirland - England,Match 10: Österrike - Norge,Match 11: Finland - Tyskland,Match 12: Danmark - Spanien,Match 13: Schweiz - Nederländerna,Match 14: Sverige - Portugal,Match 15: Island - Frankrike,Match 16: Italien - Belgien,Vem vinner hela EM? Om du gissar rätt i denna omgång får du 3 poäng\n7/11/2022 10:17:38,Johan,2,2,1,1,1,X,2,1,2,2,2,1,X,1,2,X,Norge\n7/11/2022 10:32:09,Ellen,1,X,1,X,1,1,X,1,2,2,2,X,X,1,2,2,Sverige\n7/11/2022 11:48:32,Matilda ,X,2,1,1,1,X,X,2,2,2,2,X,2,1,X,X,SVERIGE!!\n7/11/2022 13:04:53,Maria Ronnås,X,1,1,1,1,1,1,1,2,2,2,X,2,1,2,X,Sverige\n7/11/2022 13:08:17,Lars Ronnås,X,1,1,1,1,1,2,1,2,2,2,1,2,1,2,X,Sverige \n7/11/2022 18:39:45,Per,1,1,2,1,1,2,1,2,1,X,2,1,X,1,2,2,Sverige\n7/11/2022 19:30:05,Hanna the winne,1,2,1,X,2,1,2,1,2,2,2,X,2,1,1,1,Norge"
-    var csv = "Namn:,Match 1: England - Österrike,Match 2: Norge - Nordirland,Match 3: Spanien - Finland,Match 4: Tyskland - Danmark,Match 5: Portugal - Schweiz,Match 6: Nederländerna - Sverige,Match 7: Belgien - Island,Match 8: Frankrike - Italien,Match 1: Österrike- Nordirland,Match 2: England - Norge,Match 3: Danmark - Finland,Match 4: Tyskland - Spanien,Match 5: Sverige - Schweiz,Match 6: Nederländerna - Portugal,Match 7: Italien - Island,Match 8: Frankrike - Belgien,Match 9: Nordirland - England,Match 10: Österrike - Norge,Match 11: Finland - Tyskland,Match 12: Danmark - Spanien,Match 13: Schweiz - Nederländerna,Match 14: Sverige - Portugal,Match 15: Island - Frankrike,Match 16: Italien - Belgien\nJohan,1,1,1,1,1,2,2,2,2,2,1,1,1,X,2,1,2,2,2,1,X,1,2,X\nEllen,X,1,1,X,2,2,X,1,1,X,1,X,1,1,X,1,2,2,2,X,X,1,2,2\nMatilda ,1,2,X,1,1,2,X,X,X,2,1,1,1,X,X,2,2,2,2,X,2,1,X,X\nMaria Ronnås,1,1,1,X,1,2,2,X,X,1,1,1,1,1,1,1,2,2,2,X,2,1,2,X\nLars Ronnås,1,1,1,1,1,1,1,1,X,1,1,1,1,1,2,1,2,2,2,1,2,1,2,X\nPer,NA,NA,NA,NA,NA,NA,NA,NA,1,1,2,1,1,2,1,2,1,X,2,1,X,1,2,2\nHanna the winne,NA,NA,NA,NA,NA,NA,NA,NA,1,2,1,X,2,1,2,1,2,2,2,X,2,1,1,1"
+    //var csv = "Namn:,Match 1: England - Österrike,Match 2: Norge - Nordirland,Match 3: Spanien - Finland,Match 4: Tyskland - Danmark,Match 5: Portugal - Schweiz,Match 6: Nederländerna - Sverige,Match 7: Belgien - Island,Match 8: Frankrike - Italien,Match 1: Österrike- Nordirland,Match 2: England - Norge,Match 3: Danmark - Finland,Match 4: Tyskland - Spanien,Match 5: Sverige - Schweiz,Match 6: Nederländerna - Portugal,Match 7: Italien - Island,Match 8: Frankrike - Belgien,Match 9: Nordirland - England,Match 10: Österrike - Norge,Match 11: Finland - Tyskland,Match 12: Danmark - Spanien,Match 13: Schweiz - Nederländerna,Match 14: Sverige - Portugal,Match 15: Island - Frankrike,Match 16: Italien - Belgien\nJohan,1,1,1,1,1,2,2,2,2,2,1,1,1,X,2,1,2,2,2,1,X,1,2,X\nEllen,X,1,1,X,2,2,X,1,1,X,1,X,1,1,X,1,2,2,2,X,X,1,2,2\nMatilda ,1,2,X,1,1,2,X,X,X,2,1,1,1,X,X,2,2,2,2,X,2,1,X,X\nMaria Ronnås,1,1,1,X,1,2,2,X,X,1,1,1,1,1,1,1,2,2,2,X,2,1,2,X\nLars Ronnås,1,1,1,1,1,1,1,1,X,1,1,1,1,1,2,1,2,2,2,1,2,1,2,X\nPer,NA,NA,NA,NA,NA,NA,NA,NA,1,1,2,1,1,2,1,2,1,X,2,1,X,1,2,2\nHanna the winne,NA,NA,NA,NA,NA,NA,NA,NA,1,2,1,X,2,1,2,1,2,2,2,X,2,1,1,1"
+    
+    var csv = "Namn:,Match 1: England - Österrike,Match 2: Norge - Nordirland,Match 3: Spanien - Finland,Match 4: Tyskland - Danmark,Match 5: Portugal - Schweiz,Match 6: Nederländerna - Sverige,Match 7: Belgien - Island,Match 8: Frankrike - Italien,Match 1: Österrike- Nordirland,Match 2: England - Norge,Match 3: Danmark - Finland,Match 4: Tyskland - Spanien,Match 5: Sverige - Schweiz,Match 6: Nederländerna - Portugal,Match 7: Italien - Island,Match 8: Frankrike - Belgien,Match 9: Nordirland - England,Match 10: Österrike - Norge,Match 11: Finland - Tyskland,Match 12: Danmark - Spanien,Match 13: Schweiz - Nederländerna,Match 14: Sverige - Portugal,Match 15: Island - Frankrike,Match 16: Italien - Belgien,Match 1: England - Spanien,Match 1: Matchen avslutas:,Match 2: Tyskland - Österrike,Match 2: Matchen avslutas:,Match 3: Sverige - Belgien,Match 3: Matchen avslutas:,Match 4: Frankrike - Nederländerna,Match 4: Matchen avslutas:\nJohan,1,1,1,1,1,2,2,2,2,2,1,1,1,X,2,1,2,2,2,1,X,1,2,X,1,Efter förlängning,1,Efter 90 minuter,1,Efter 90 minuter,1,Efter straffar\nEllen,X,1,1,X,2,2,X,1,1,X,1,X,1,1,X,1,2,2,2,X,X,1,2,2,1,Efter förlängning,1,Efter 90 minuter,1,Efter 90 minuter,1,Efter förlängning\nMatilda ,1,2,X,1,1,2,X,X,X,2,1,1,1,X,X,2,2,2,2,X,2,1,X,X,1,Efter förlängning,1,Efter förlängning,1,Efter 90 minuter,1,Efter straffar\nMaria Ronnås,1,1,1,X,1,2,2,X,X,1,1,1,1,1,1,1,2,2,2,X,2,1,2,X,1,Efter 90 minuter,1,Efter 90 minuter,1,Efter 90 minuter,1,Efter förlängning\nLars Ronnås,1,1,1,1,1,1,1,1,X,1,1,1,1,1,2,1,2,2,2,1,2,1,2,X,1,Efter 90 minuter,1,Efter 90 minuter,1,Efter förlängning,1,Efter 90 minuter\nPer,NA,NA,NA,NA,NA,NA,NA,NA,1,1,2,1,1,2,1,2,1,X,2,1,X,1,2,2,1,Efter 90 minuter,1,Efter 90 minuter,1,Efter 90 minuter,2,Efter förlängning\nHanna the winne,NA,NA,NA,NA,NA,NA,NA,NA,1,2,1,X,2,1,2,1,2,2,2,X,2,1,1,1,1,Efter 90 minuter,1,Efter förlängning,1,Efter 90 minuter,1,Efter straffar"
+    
     var data = $.csv.toObjects(csv);
     console.log(data);
     //DISPLAY LIST OF USERS
@@ -50,6 +53,7 @@ $(function(){
     $.ajax(settings).done(function (response) {
         console.log(response.response);
         let s = "";
+        let matchIndex = 0;
         for(r of response.response){
             matchResult = "X";
             
@@ -58,10 +62,24 @@ $(function(){
             }else if(r.teams.away.winner){
                 matchResult = "2";
             }
-            if(r.fixture.status.short == "FT"){
+            
+            if(r.fixture.status.long == "Match Finished"){
                 resultList.push(matchResult);
             }
+
+            if(matchIndex > 23){
+                if(r.fixture.status.short == "FT"){
+                    resultList.push("Efter 90 minuter");
+                }else if(r.fixture.status.short == "AET"){
+                    resultList.push("Efter förlängning");
+                }else if(r.fixture.status.short == "PEN"){
+                    resultList.push("Efter straffar");
+                }
+            }
+
             
+            
+            matchIndex++;
             //s += "<p>" + matchResult + "</p>";
         }
         swap(resultList, 16,17);
@@ -83,7 +101,7 @@ $(function(){
             score = 0;
             for(key in d){
                 //console.log(key);
-                if(key.substring(0, 5) == "Match"){
+                if(key.substring(0, 5) == "Match" ){
                     if(index < resultList.length){
                         if(resultList[index] == d[key]){
                             score ++;
@@ -123,7 +141,7 @@ $(function(){
         var roundIndex = 1;
         for(key in betList){
             if(key.substring(0, 5) == "Match"){
-                if(key.substring(0,8) == "Match 1:"){
+                if(key.substring(0,8) == "Match 1:" && key.substring(9, 16) != "Matchen"){
                     s+= "<p> Omgång " + roundIndex+ "</p>";
                     roundIndex++;
                 }
